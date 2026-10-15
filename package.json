@@ -1,0 +1,35 @@
+{
+  "name": "to-do-list-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FedorovaElizaveta/To-Do-List-Backend.git"
+  },
+  "keywords": [],
+  "author": "Elizaveta Fedorova <felizaveta564@gmail.com>",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/FedorovaElizaveta/To-Do-List-Backend/issues"
+  },
+  "homepage": "https://github.com/FedorovaElizaveta/To-Do-List-Backend#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "nodemon": "^3.1.14",
+    "prisma": "^6.19.3",
+    "typescript-eslint": "^8.71.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8"
+  }
+}
