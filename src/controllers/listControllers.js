@@ -1,7 +1,7 @@
 import { prisma } from "../config/db.js";
 
 export const getAllLists = async (req, res) => {
-  const lists = await prisma.todoList.findMany();
+  const lists = await prisma.todoList.findMany({ include: { tasks: true } });
 
   if (lists.length === 0) {
     res.status(404).json({ error: "No to-do lists found" });
@@ -21,8 +21,6 @@ export const addList = async (req, res) => {
   const newList = await prisma.todoList.create({
     data: {
       title,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
     },
   });
 
@@ -45,10 +43,7 @@ export const updateListName = async (req, res) => {
 
   const updatedList = await prisma.todoList.update({
     where: { id },
-    data: {
-      title,
-      updatedAt: new Date().toISOString(),
-    },
+    data: { title },
   });
 
   res.status(200).json({
